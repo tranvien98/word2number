@@ -43,5 +43,3 @@ hiệu điện thế 220V
 1000000đ
 1526000$
 ```
-
-code được tham khảo từ  `https://github.com/ngthuong45/vietnam-number`
