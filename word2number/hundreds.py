@@ -89,13 +89,20 @@ def process_hundreds(words: list) -> str:
                 return process_units(remaining) + process_tens(value_of_tens)
 
             # 
-        if len(clean_words_number) == 5:
+        # print(clean_words_number)
+        if len(clean_words_number) == 5 or len(clean_words_number) == 6:
         # ['một', 'chín', 'tám', 'mươi'] -> xử lý thành  ['một', 'chín', 'tám', 'mươi', 'không]
-            if tens_index == 3:
+            if tens_index == len(clean_words_number) - 2:
                 tmp_number = ''
                 for nb in remaining:
                     tmp_number+=process_units([nb])
                 return tmp_number + process_tens(value_of_tens)
+
+            # if tens_index == len(clean_words_number) :
+            #     tmp_number = ''
+            #     for nb in remaining:
+            #         tmp_number+=process_units([nb])
+            #     return tmp_number + process_tens(value_of_tens)
 
     # Trường hợp ['hai', 'ba'] == 023
     elif len(clean_words_number) <= 2:

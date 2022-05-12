@@ -79,23 +79,28 @@ def acronyms(text):
     return text
     
 def convert_year(text):
-    _date_re = re.compile(r'\btháng[ ][1-9]{0,2}[5][1-2][0-9]{3}[ ]{0,1}$|\b[5][1-2][0-9]{3}[ ]{0,1}$')
+    _date_re = re.compile(r'\btháng[ ][1-9]{0,2}[5][1-2][0-9]{3}[ ]{0,1}')
+    text = re.sub(_date_re, expand_date, text)
+    _date_re = re.compile(r'\b[5][1-2][0-9]{3}[ ]{0,1}')
     text = re.sub(_date_re, expand_date, text)
     return text
 
 def expand_date(m):
-    arr = m.group(0).split(' ')
+    # print( m.group(0))
+    arr = m.group(0).strip().split(' ')
     if len(arr) > 1:
         pre = arr[0] + " "
     else:
         pre = ""
+    # print(number)
     number = arr[-1]
+    # print(number)
     if len(number) == 5:
-        return pre + "năm " + number[1:]
+        return pre + "năm " + number[1:] + ' '
     if len(number) == 6:
-        return pre + number[0:1] + " năm " + number[2:]
+        return pre + number[0:1] + " năm " + number[2:] + ' '
     if len(number) == 7:
-        return pre + number[0:2] + " năm " + number[3:]
+        return pre + number[0:2] + " năm " + number[3:] + ' '
 
     return m
 

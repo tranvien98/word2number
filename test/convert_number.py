@@ -42,8 +42,9 @@ text = ["Hai mươi lăm sự kiện gần một trăm bốn mươi nghìn tỷ 
 ,"TỔNG SỐ CỔ PHIẾU VÀ HAI MƯƠI PHẨY BẢY PHẦN TRĂM TỔNG VỐN HÓA TOÀN THỊ TRƯỜNG THEO ĐÓ TỔNG DOANH THU VÀ LỢI NHUẬN CỦA CÁC CÔNG TY NÀY LẦN LƯỢT BA MƯƠI MỐT PHẨY NĂM PHẦN TRĂM VÀ SÁU MƯƠI TÁM PHẨY MỘT PHẦN TRĂM SO VỚI CÙNG KỲ NĂM NGOÁI DO VỐN HÓA LỚN CÓ MỨC TĂNG TRƯỞNG LỢI NHUẬN CAO NHẤT LÀ NĂM MƯƠI MỐT PHẨY BA PHẦN TRĂM SO VỚI CÙNG KỲ VƯỢT TRỘI SO VỚI NHÓM NGÂN HÀNG TRUNG BÌNH VÀ NHÓM VỐN HÓA NHỎ CÓ MỨC TĂNG TRƯỞNG"
 ,"LỢI NHUẬN SONG LẦN LƯỢT LÀ BỐN MƯƠI LĂM PHẨY BỐN PHẦN TRĂM SO VỚI CÙNG KỲ VÀ HAI MƯƠI BA PHẨY BỐN PHẦN TRĂM SO VỚI CÙNG KỲ BỆNH CÓ TỈ LỆ DOANH NGHIỆP CÔNG BỐ BÁO CÁO KẾT QUẢ KINH DOANH QUỸ CAO HƠN BỐN MƯƠI PHẦN TRĂM THEO TỶ TRỌNG VỐN HÓA VÀ TẤT CẢ ĐỀU CÓ MỨC TĂNG TRƯỞNG LỢI NHUẬN KHÁCH QUAN TRONG SỐ BẢY NGÀY NAY HÓA CHẤT CÓ MỨC TĂNG TRƯỞNG LỢI NHUẬN SAU NGÀNH NHẤT LÀ NĂM PHẨY TÁM PHẦN TRĂM SO VỚI CÙNG"
 ,"KHI ĐÓNG GÓP HAI MƯƠI BẢY PHẦN TRĂM VÀ TĂNG TRƯỞNG LỢI NHUẬN SÓNG CỦA THỊ TRƯỜNG TRONG KHI ĐÓ CẢNH SÁT GIAO THÔNG ĐIỆN MỘT TRĂM LINH NĂM PHẨY NĂM PHẦN TRĂM SO VỚI CÙNG KỲ CÔNG NGHỆ VĂN SÁU PHẨY SÁU PHẦN TRĂM SO VỚI CÙNG KỲ DỊCH VỤ TÀI CHÍNH TĂNG HAI MƯƠI TÁM PHẨY CHÍN PHẦN TRĂM SO VỚI CÙNG KỲ HƯỚNG TĂNG HAI MƯƠI BẢY PHẨY HAI PHẦN TRĂM SO VỚI CÙNG KỲ SAU KHI GIA"
-, "một chín hai mươi"
-, "sáu phẩy ba tỷ dax sáu phẩy ba tỷ" 
+, "năm một chín hai mươi"
+, "sáu phẩy ba tỷ dax sáu phẩy ba tỷ"
+," năm hai nghìn không trăm mười chín"
 ]
 
 

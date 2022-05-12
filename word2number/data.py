@@ -42,6 +42,6 @@ units_acronyms = {
     "phần trăm": "%"
 }
 
-excecpt_word = ["phong ba", "cơm chín", "phần trăm"]
+excecpt_word = ["phong ba", "cơm chín", "phần trăm", 'nghìn tỷ đồng', 'tỷ đồng']
 
 word_multiplier = billion_words + million_words + thousand_words + hundreds_words + tens_words + tens_special + special_word
