@@ -11,6 +11,12 @@ ví dụ: năm phẩy hai -> 5,2  ta sẽ thêm vào `special_char` dòng 30 fil
 
 ví dụ: năm đô -> 5\$  ta sẽ thêm vào `units_acronyms` dòng 34 file data.py `"đô": "$"`
 
+<strong> Thêm các từ ngoại lệ </strong>
+
+Các từ ngoại lệ sẽ không chuyển sang số trong quá trình convert
+
+Dòng 44 file data.py `excecpt_word = ["phong ba, cơm chín"]`
+
 Chạy file test/convert_number.py
 
 `python test/convert_number.py`

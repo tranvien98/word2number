@@ -36,8 +36,9 @@ def process_hundreds(words: list) -> str:
 
     """
     # Tiền xữ lý danh sách chữ số đầu vào.
-    numbers_of_hundreds = pre_process_hundreds(words)
 
+    numbers_of_hundreds = pre_process_hundreds(words)
+    # print(numbers_of_hundreds.words_number)
     # Xữ lý chữ số hàng trăm.
     clean_words_number = numbers_of_hundreds.words_number
 
@@ -76,7 +77,8 @@ def process_hundreds(words: list) -> str:
         if len(clean_words_number) <= 3:
             value_of_hundreds = ['không']
             value_of_tens = clean_words_number
-
+        # print(tens_index)
+        # print(clean_words_number)
         if len(clean_words_number) == 4:
             # Trường hợp đặc biệt như ['ba', 'bốn', 'mươi', 'hai'] == 342
             if tens_index == 1:
@@ -85,6 +87,15 @@ def process_hundreds(words: list) -> str:
             # Trường hợp đặc biệt như ['bốn', 'mươi', 'hai', 'ba'] == 423
             if tens_index == 2:
                 return process_units(remaining) + process_tens(value_of_tens)
+
+            # 
+        if len(clean_words_number) == 5:
+        # ['một', 'chín', 'tám', 'mươi'] -> xử lý thành  ['một', 'chín', 'tám', 'mươi', 'không]
+            if tens_index == 3:
+                tmp_number = ''
+                for nb in remaining:
+                    tmp_number+=process_units([nb])
+                return tmp_number + process_tens(value_of_tens)
 
     # Trường hợp ['hai', 'ba'] == 023
     elif len(clean_words_number) <= 2:
@@ -95,5 +106,6 @@ def process_hundreds(words: list) -> str:
     elif len(clean_words_number) == 3:
         value_of_hundreds = clean_words_number[:1]
         value_of_tens = clean_words_number[1:]
+    # xử lý th đọc năm ví dụ một chín tám mươi
 
     return process_units(value_of_hundreds) + process_tens(value_of_tens)

@@ -55,6 +55,17 @@ def process_large_number_normal(words: list):
 
     if billion_index:
         value_of_billion = clean_words_number[:billion_index]
+    large_number_billion = pre_process_large_number(value_of_billion) 
+    # clean_words_number_billion = large_number_billion.words_number 
+    thousand_index_billion =  large_number_billion.get_keyword_index['thousand_index']
+
+    if thousand_index_billion:
+        del clean_words_number[thousand_index_billion]
+        del value_of_billion[thousand_index_billion]
+        large_number = pre_process_large_number(clean_words_number)
+        billion_index = large_number.get_keyword_index['billion_index']
+        million_index = large_number.get_keyword_index['million_index']
+        thousand_index = large_number.get_keyword_index['thousand_index']
 
     if million_index:
         if billion_index:
@@ -83,15 +94,26 @@ def process_large_number_normal(words: list):
     elif billion_index:
         value_of_hundreds = clean_words_number[billion_index + 1 :]
     else:
+        # print(clean_words_number)
         value_of_hundreds = clean_words_number
-
-    total_number = (
-        process_hundreds(value_of_billion)
-        + process_hundreds(value_of_million)
-        + process_hundreds(value_of_thousand)
-        + process_hundreds(value_of_hundreds)
-    )
-
+    if not thousand_index_billion:
+        # print(value_of_hundreds)
+        total_number = (
+            process_hundreds(value_of_billion)
+            + process_hundreds(value_of_million)
+            + process_hundreds(value_of_thousand)
+            + process_hundreds(value_of_hundreds)
+        )
+    else:
+        # print(process_hundreds(value_of_million))
+        total_number = (
+            process_hundreds(value_of_billion)
+            + '000'
+            + process_hundreds(value_of_million)
+            + process_hundreds(value_of_thousand)
+            + process_hundreds(value_of_hundreds)
+        )        
+    # print(total_number)
     return int(total_number)
 
 

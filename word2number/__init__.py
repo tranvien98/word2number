@@ -1,8 +1,8 @@
 import re
 from word2number.large_number import process_large_number
-from word2number.data import units_acronyms, special_char
+from word2number.data import units_acronyms, special_char, word_multiplier
 from word2number.utils.base import pre_process_w2n
-
+from word2number.single import process_single
 
 def w2n(number_sentence):
     """Chuyển đổi chữ số sang số.
@@ -25,7 +25,21 @@ def w2n(number_sentence):
     number_list, index_number, origin_list = pre_process_w2n(number_sentence)
     new_string_numbers = []
     for str_num in number_list:
-        new_string_numbers.append(str(process_large_number(str_num)))
+        # print(str_num)
+        check_single = False
+        for nu in str_num:
+            if nu in word_multiplier:   
+                check_single = True
+                break
+        if check_single:
+            # print(str_num) 
+            try:
+                new_string_numbers.append(str(process_large_number(str_num)))
+            except:
+                # print("----")
+                new_string_numbers.append(' '.join(str_num))
+        else:
+            new_string_numbers.append(str(process_single(str_num)))
     return merge_string(origin_list, new_string_numbers, index_number)
 
 def merge_string(origin_list, number_list, index):
@@ -63,8 +77,9 @@ def acronyms(text):
         if m:
             text = re.sub(j,k,text)
     return text
+    
 def convert_year(text):
-    _date_re = re.compile(r'\btháng[ ][1-9]{0,2}[5][1-2][0-9]{3}[ ]{0,1}$|\b[5]][1-2][0-9]{3}[ ]{0,1}$')
+    _date_re = re.compile(r'\btháng[ ][1-9]{0,2}[5][1-2][0-9]{3}[ ]{0,1}$|\b[5][1-2][0-9]{3}[ ]{0,1}$')
     text = re.sub(_date_re, expand_date, text)
     return text
 
@@ -76,7 +91,7 @@ def expand_date(m):
         pre = ""
     number = arr[-1]
     if len(number) == 5:
-        return pre + "năm " + number[2:]
+        return pre + "năm " + number[1:]
     if len(number) == 6:
         return pre + number[0:1] + " năm " + number[2:]
     if len(number) == 7:
@@ -94,4 +109,3 @@ def convert_special_char(text):
         if m:
             text = re.sub(j,k,text)
     return text
-    

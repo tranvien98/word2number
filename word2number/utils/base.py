@@ -1,3 +1,4 @@
+import math
 from word2number.data import (
     billion_words,
     hundreds_words,
@@ -8,8 +9,9 @@ from word2number.data import (
     thousand_words,
     units,
     word_multiplier,
+    excecpt_word
 )
-
+import re
 class Numbers(object):
     """Class xữ lý chữ số đầu vào."""
 
@@ -101,19 +103,53 @@ def pre_process_w2n(words: str):
     words = words.lower()  # converting chuổi đầu vào thành chuổi viết thường
 
     origin_list = words.strip().split()  # xóa khoảng trắng thừa và chia câu thành các từ
-
-    # xóa các từ không có trong unit va word_multiplier
-    for idx, word in enumerate(origin_list):
-        if word in units or word in word_multiplier:
-            clean_numbers.append(word)
-            index_number.append(idx)
-        else:
-            if len(clean_numbers) > 0:
-                number_list.append(convert_to_tens_word(clean_numbers))
-            clean_numbers = []
-            
-
-
+    origin_word = ' '.join(origin_list)
+    except_remem = []
+    # xử lý trường hợp 3,6 tỷ
+    fin_comma = [m.start() for m in re.finditer("phẩy", origin_word)]
+    for fin_c in fin_comma:
+        index_comma = check_index(origin_list, fin_c, "phẩy")
+        fin_billion = [k.start() for k in re.finditer("tỷ", origin_word)]
+        for fin_b in fin_billion:
+            index_billion = check_index(origin_list, fin_b, "tỷ")
+            if int(index_billion[0]) - int(index_comma[0]) < 3 and int(index_billion[0]) - int(index_comma[0]) > 0:
+                except_remem.extend(index_billion)
+    # nhớ các vị trí ngoại lệ trong câu để bỏ qua khi phân biệt
+    for ex_word in excecpt_word:
+        fin_all = [m.start() for m in re.finditer(ex_word,origin_word)]
+        for  fin in fin_all:
+            except_remem.extend(check_index(origin_list, fin, ex_word))
+    # print(except_remem)
+    if len(except_remem) == 0:
+        for idx, word in enumerate(origin_list):
+            if word in units or word in word_multiplier :
+                clean_numbers.append(word)
+                index_number.append(idx)
+            else:
+                if len(clean_numbers) > 0:
+                    number_list.append(convert_to_tens_word(clean_numbers))
+                clean_numbers = []
+    else:
+        # print(except_remem)
+        for idx, word in enumerate(origin_list):
+            if (word in units or word in word_multiplier) and (idx not in except_remem):
+                # print(idx, word)
+                clean_numbers.append(word)
+                index_number.append(idx)
+            else:
+                if len(clean_numbers) > 0:
+                    number_list.append(convert_to_tens_word(clean_numbers))
+                clean_numbers = []        
+    # print("--------------",number_list)
     if len(clean_numbers) > 0:
         number_list.append(convert_to_tens_word(clean_numbers))
     return number_list, index_number, origin_list
+
+def check_index(words, pos, ex_word):
+    res = []
+    index1 = 0
+    for idx, word in enumerate(words):
+        if index1 >= pos and index1 <= pos + len(ex_word):
+            res.append(idx)
+        index1 += len(word) + 1
+    return res

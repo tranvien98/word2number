@@ -15,7 +15,7 @@ units = {
     'tám': 8,
     'chín': 9,
 }
-
+thousand_billion_words = ["nghìn tỷ", 'ngàn tỷ', 'nghìn tỉ', 'ngàn tỉ']
 billion_words = ['tỷ', 'tỏi', 'tỉ']
 million_words = ['triệu', 'củ', 'chai']
 thousand_words = ['nghìn', 'nghàn', 'ngàn']
@@ -38,7 +38,10 @@ units_acronyms = {
     "vôn": "V",
     "độ xê": "C",
     "cân": "kg",
-    "ki lô mét": "km"
+    "ki lô mét": "km",
+    "phần trăm": "%"
 }
+
+excecpt_word = ["phong ba", "cơm chín", "phần trăm"]
 
 word_multiplier = billion_words + million_words + thousand_words + hundreds_words + tens_words + tens_special + special_word
