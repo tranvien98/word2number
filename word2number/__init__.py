@@ -1,6 +1,6 @@
 import re
 from word2number.large_number import process_large_number
-from word2number.data import units_acronyms, special_char, word_multiplier
+from word2number.data import units_acronyms, special_char, word_multiplier, exact_excecpt_words
 from word2number.utils.base import pre_process_w2n
 from word2number.single import process_single
 
@@ -23,12 +23,20 @@ def w2n(number_sentence):
 
     # Tiền xữ lý dữ liệu chuỗi số đầu vào
     number_list, index_number, origin_list = pre_process_w2n(number_sentence)
+    try:
+        flatten_number = flatten_list(number_list)
+        exact_excecpt_word = ' '.join(flatten_number)
+        if exact_excecpt_word in exact_excecpt_words:
+            number_list = []
+            index_number = []
+    except:
+        print("Lỗi convert mảng nhiều chiều")
     new_string_numbers = []
     for str_num in number_list:
         # print(str_num)
         check_single = False
         for nu in str_num:
-            if nu in word_multiplier:   
+            if nu in word_multiplier:
                 check_single = True
                 break
         if check_single:
@@ -114,3 +122,12 @@ def convert_special_char(text):
         if m:
             text = re.sub(j,k,text)
     return text
+
+def flatten_list(list_number):
+    """
+    Hàm chuyển mảng [[], []] về mảng []
+    """
+    new_list = []
+    for element in list_number:
+        new_list.extend(element)
+    return new_list

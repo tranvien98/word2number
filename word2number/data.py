@@ -41,7 +41,9 @@ units_acronyms = {
     "ki lô mét": "km",
     "phần trăm": "%"
 }
-
+# các từ ngoại lệ chín ngìn tỷ đồng -> 9 nghìn tỷ đồng
 excecpt_word = ["phong ba", "cơm chín", "phần trăm", 'nghìn tỷ đồng', 'tỷ đồng']
+#các từ ngoại lệ chính xác bằng số từ được tách. ví dụ từ được tách trăm năm (sau khi convert) trăm năm
+exact_excecpt_words = ["trăm năm", "nghìn năm", "triệu năm", "tỷ năm"]
 
 word_multiplier = billion_words + million_words + thousand_words + hundreds_words + tens_words + tens_special + special_word
