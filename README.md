@@ -19,11 +19,13 @@ Các từ ngoại lệ sẽ không chuyển sang số trong quá trình convert
 
 Dòng 44 file data.py `excecpt_word = ["phong ba, cơm chín"]`
 
-Chạy file test/convert_number.py
-
 <strong> Thêm các từ ngoại lệ đúng </strong>
 [exact_excecpt_words](https://github.com/tranvien98/word2number/blob/main/word2number/data.py#L47)
 Các từ ngoại lệ đúng là các từ hoặc số sau khi được tìm kiếm đúng bằng từ đó ví dụ từ "trăm năm" trăm năm -> trăm năm,  sáu trăm năm mươi -> 650
+
+`exact_excecpt_words = ["trăm năm", "nghìn năm", "triệu năm", "tỷ năm"]`
+
+Chạy file test/convert_number.py
 
 `python test/convert_number.py`
 
