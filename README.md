@@ -15,9 +15,15 @@ ví dụ: năm đô -> 5\$  ta sẽ thêm vào `units_acronyms` dòng 34 file da
 
 Các từ ngoại lệ sẽ không chuyển sang số trong quá trình convert
 
+[excecpt_word](https://github.com/tranvien98/word2number/blob/main/word2number/data.py#L44)
+
 Dòng 44 file data.py `excecpt_word = ["phong ba, cơm chín"]`
 
 Chạy file test/convert_number.py
+
+<strong> Thêm các từ ngoại lệ đúng </strong>
+[exact_excecpt_words](https://github.com/tranvien98/word2number/blob/main/word2number/data.py#L47)
+Các từ ngoại lệ đúng là các từ hoặc số sau khi được tìm kiếm đúng bằng từ đó ví dụ từ "trăm năm" trăm năm -> trăm năm,  sáu trăm năm mươi -> 650
 
 `python test/convert_number.py`
 
