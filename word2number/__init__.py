@@ -48,7 +48,11 @@ def w2n(number_sentence):
                 new_string_numbers.append(' '.join(str_num))
         else:
             new_string_numbers.append(str(process_single(str_num)))
-    return merge_string(origin_list, new_string_numbers, index_number)
+    result = merge_string(origin_list, new_string_numbers, index_number)
+    if result.isdigit():
+        if int(result) >= 10**6:
+            return format_number_with_thousands_separator(result)
+    return result
 
 def merge_string(origin_list, number_list, index):
     """
@@ -131,3 +135,16 @@ def flatten_list(list_number):
     for element in list_number:
         new_list.extend(element)
     return new_list
+
+
+def format_number_with_thousands_separator(number_str):
+    digits = list(number_str)
+    digits.reverse()
+    formatted_digits = []
+    for i, digit in enumerate(digits):
+        if i > 0 and i % 3 == 0:
+            formatted_digits.append('.')
+        formatted_digits.append(digit)
+    formatted_digits.reverse()
+    formatted_number = ''.join(formatted_digits)
+    return formatted_number
