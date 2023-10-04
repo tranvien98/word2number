@@ -9,7 +9,8 @@ text = [
     "mùng mười tháng mười năm hai không hai ba", 
 	"một hai ba bốn năm",
 	"mùng bốn tháng mười một năm hai nghìn không trăm hai mươi ba",
-	"năm một chín tám mươi"
+	"năm một chín tám mươi",
+	"mùng bốn tháng tám năm hai nghìn không trăm hai mươi ba"
 	]
 for te in text:
     print(w2n(te))

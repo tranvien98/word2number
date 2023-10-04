@@ -91,7 +91,7 @@ def acronyms(text):
     return text
     
 def convert_year(text):
-    _date_re = re.compile(r'\btháng[ ][1-9][0-9][5][1-2][0-9]{3}[ ]{0,1}')
+    _date_re = re.compile(r'\btháng[ ][1-9][0-9]{0,1}[5][1-2][0-9]{3}[ ]{0,1}')
     text = re.sub(_date_re, expand_date, text)
     _date_re = re.compile(r'\b[5][1-2][0-9]{3}[ ]{0,1}')
     text = re.sub(_date_re, expand_date, text)
