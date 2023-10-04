@@ -33,7 +33,6 @@ def w2n(number_sentence):
         print("Lỗi convert mảng nhiều chiều")
     new_string_numbers = []
     for str_num in number_list:
-        # print(str_num)
         check_single = False
         for nu in str_num:
             if nu in word_multiplier:
@@ -42,9 +41,10 @@ def w2n(number_sentence):
         if check_single:
             # print(str_num) 
             try:
+                # print("----")
+                # print(process_large_number(str_num))
                 new_string_numbers.append(str(process_large_number(str_num)))
             except:
-                # print("----")
                 new_string_numbers.append(' '.join(str_num))
         else:
             new_string_numbers.append(str(process_single(str_num)))
@@ -91,7 +91,7 @@ def acronyms(text):
     return text
     
 def convert_year(text):
-    _date_re = re.compile(r'\btháng[ ][1-9]{0,2}[5][1-2][0-9]{3}[ ]{0,1}')
+    _date_re = re.compile(r'\btháng[ ][1-9][0-9][5][1-2][0-9]{3}[ ]{0,1}')
     text = re.sub(_date_re, expand_date, text)
     _date_re = re.compile(r'\b[5][1-2][0-9]{3}[ ]{0,1}')
     text = re.sub(_date_re, expand_date, text)

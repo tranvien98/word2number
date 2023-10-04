@@ -30,7 +30,7 @@ text = ["Hai mươi lăm sự kiện gần một trăm bốn mươi nghìn tỷ 
 ,"LINH HOẠT KIỂM SOÁT HIỆU QUẢ"
 ,"NẾU NGHI NGỜ LỘ CẦN LẬP TỨC LIÊN HỆ NGÂN HÀNG PHẢI ĐÓNG THUẾ VÀ KHÁC HẲN VỚI KHÁCH HÀNG CŨNG KHÔNG TỰ NHẬT CÁC THÔNG TIN NÀY THEO CÁI ĐƯỜNG LINH ĐÃ ĐƯỢC GỬI ĐẾN SỐ ĐIỆN THOẠI CỦA MÌNH"
 ,"TỪ THÁNG MƯỜI HAI KHÔNG MƯỜI TÁM THÁNG MƯỜI HAI"
-,"CHO HÀNG TRĂM NGƯỜI VAY VỚI LÃI SUẤT TỪ MỘT TRĂM LẺ CHÍN MƯƠI PHẦN TRĂM ĐẾN BA TRĂM SÁU MƯƠI PHẦN TRĂM"
+,"CHO HÀNG TRĂM NGƯỜI VAY VỚI LÃI SUẤT TỪ MỘT TRĂM CHÍN MƯƠI PHẦN TRĂM ĐẾN BA TRĂM SÁU MƯƠI PHẦN TRĂM"
 ,"NGÀY HAI MƯƠI CHÍN TRĂM TÁM MƯƠI BA TRIỆU ĐỒNG CÙNG NHIỀU TÀI SẢN CÓ GIÁ TRỊ"
 ,"THEO ĐÓ THÌ NHÓM KHÁCH HÀNG ĐƯỢC GIẢM TÌNH CHUYÊN TRÊN NHÓM CÁC DOANH NGHIỆP CHẾ BIẾN BẢO QUẢN THỦY SẢN VÀ CÁC SẢN PHẨM THỦY SẢN CHẾ BIẾN BẢO QUẢN KHÔNG QUẢ LÀ CÁC DOANH NGHIỆP SẢN XUẤT KINH DOANH NGHIỆP XUẤT KHẨU NĂM HAI NGÀN KHÔNG TRĂM HAI MƯƠI TỶ"
 ,"GIẢM TIỀN ĐIỆN ĐÃ CÓ HƠN MƯỜI SÁU NGÀN NĂM TRĂM TỶ ĐỒNG"

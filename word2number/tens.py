@@ -58,9 +58,10 @@ def process_tens(words: list) -> str:
             value_of_units = clean_words_number[2]
         except IndexError:
             value_of_units = 'không'
-
+        # if value_of_tens == "một"
     if tens_index is None:
         value_of_tens = clean_words_number[0]
         value_of_units = clean_words_number[1]
 
+    # print(clean_words_number)
     return process_units([value_of_tens]) + process_units([value_of_units])
